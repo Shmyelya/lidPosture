@@ -27,8 +27,9 @@ xcodegen generate
 ## First use
 
 1. Sit upright for a couple of seconds and press **Calibrate** (⌘K).
-2. Slouch — after ~15 seconds you should get a notification.
-3. Without moving your head, tilt the lid; the “head drop” reading should stay roughly stable. If it drifts worse, flip `lidCompensationSign` in `PostureEngine.swift` and/or tune `verticalFOV`.
+2. Slouch — a notification arrives after the delay in **Настройки** (default 15 seconds).
+3. Without moving your head, tilt the lid; the “head drop” reading should stay roughly stable. If it drifts worse, turn on **Инвертировать компенсацию крышки** and/or change **Угол обзора камеры** in the same section.
+4. **Сбросить калибровку** clears the saved baseline. Sensitivity, delays, field of view, and the lid-compensation flip are kept across launches.
 
 ## Layout
 

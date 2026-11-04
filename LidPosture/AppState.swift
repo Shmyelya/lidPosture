@@ -50,12 +50,35 @@ final class AppState: ObservableObject {
     }
 
     /// Bad posture must last this long before we nudge.
-    let alertDelay: TimeInterval = 15
+    @Published var alertDelay: TimeInterval = 15 {
+        didSet { UserDefaults.standard.set(alertDelay, forKey: Keys.alertDelay) }
+    }
     /// Minimum gap between two notifications.
-    let alertCooldown: TimeInterval = 120
+    @Published var alertCooldown: TimeInterval = 120 {
+        didSet { UserDefaults.standard.set(alertCooldown, forKey: Keys.alertCooldown) }
+    }
+    /// Vertical field of view used to turn face position into degrees.
+    @Published var verticalFOV: Double = 50 {
+        didSet {
+            engine.verticalFOV = verticalFOV
+            UserDefaults.standard.set(verticalFOV, forKey: Keys.verticalFOV)
+        }
+    }
+    /// Flips lid compensation when tilting the screen makes the reading drift more.
+    @Published var lidCompensationFlipped: Bool = false {
+        didSet {
+            engine.lidCompensationSign = lidCompensationFlipped ? -1 : 1
+            UserDefaults.standard.set(lidCompensationFlipped, forKey: Keys.lidFlipped)
+        }
+    }
+    @Published private(set) var isCalibrated = false
 
     private enum Keys {
         static let sensitivity = "sensitivity"
+        static let alertDelay = "alertDelay"
+        static let alertCooldown = "alertCooldown"
+        static let verticalFOV = "verticalFOV"
+        static let lidFlipped = "lidCompensationFlipped"
         static let baselineLid = "baseline.lidAngle"
         static let baselineElevation = "baseline.elevation"
         static let baselineSize = "baseline.size"
@@ -71,14 +94,30 @@ final class AppState: ObservableObject {
 
     init() {
         sensorAvailable = lidSensor != nil
-        if let raw = UserDefaults.standard.string(forKey: Keys.sensitivity),
+        let defaults = UserDefaults.standard
+        if let raw = defaults.string(forKey: Keys.sensitivity),
            let saved = Sensitivity(rawValue: raw) {
             sensitivity = saved
         } else {
             engine.dropThreshold = sensitivity.dropThreshold
         }
+        if defaults.object(forKey: Keys.alertDelay) != nil {
+            alertDelay = defaults.double(forKey: Keys.alertDelay)
+        }
+        if defaults.object(forKey: Keys.alertCooldown) != nil {
+            alertCooldown = defaults.double(forKey: Keys.alertCooldown)
+        }
+        if defaults.object(forKey: Keys.verticalFOV) != nil {
+            verticalFOV = defaults.double(forKey: Keys.verticalFOV)
+        } else {
+            engine.verticalFOV = verticalFOV
+        }
+        if defaults.object(forKey: Keys.lidFlipped) != nil {
+            lidCompensationFlipped = defaults.bool(forKey: Keys.lidFlipped)
+        }
         if let baseline = Self.loadBaseline() {
             engine.restoreBaseline(baseline)
+            isCalibrated = true
         }
         tracker.onSample = { [weak self] sample in
             Task { @MainActor in self?.handle(sample) }
@@ -113,8 +152,18 @@ final class AppState: ObservableObject {
                 Self.saveBaseline(baseline)
             }
             badSince = nil
+            isCalibrated = true
             status = .good
         }
+    }
+
+    func resetCalibration() {
+        engine.clearBaseline()
+        Self.clearBaseline()
+        isCalibrated = false
+        badSince = nil
+        drop = 0
+        if !isPaused { status = .needsCalibration }
     }
 
     private static func loadBaseline() -> PostureEngine.Baseline? {
@@ -134,6 +183,13 @@ final class AppState: ObservableObject {
         defaults.set(baseline.lidAngle, forKey: Keys.baselineLid)
         defaults.set(baseline.elevation, forKey: Keys.baselineElevation)
         defaults.set(baseline.size, forKey: Keys.baselineSize)
+    }
+
+    private static func clearBaseline() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: Keys.baselineLid)
+        defaults.removeObject(forKey: Keys.baselineElevation)
+        defaults.removeObject(forKey: Keys.baselineSize)
     }
 
     private func handle(_ sample: FaceSample?) {

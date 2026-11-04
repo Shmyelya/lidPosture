@@ -57,6 +57,12 @@ struct PostureEngine {
         self.baseline = baseline
     }
 
+    mutating func clearBaseline() {
+        baseline = nil
+        drop = 0
+        sizeChange = 0
+    }
+
     /// Converts a normalized vertical position into an angle from the camera axis.
     private func elevation(fromCenterY y: Double) -> Double {
         let halfFOV = verticalFOV / 2 * .pi / 180
