@@ -33,6 +33,10 @@ struct PostureEngine {
     var dropThreshold: Double = 6
     /// Relative face-size growth that counts as "too close" (0.15 = 15% bigger).
     var closeThreshold: Double = 0.15
+    /// Degrees the head must rise back before a slouch verdict clears.
+    var slouchHysteresis: Double = 2
+    /// How far face-size growth must fall before a "too close" verdict clears.
+    var closeHysteresis: Double = 0.05
     /// Smoothing factor for the exponential moving average, 0…1.
     var smoothing: Double = 0.3
 
@@ -46,10 +50,14 @@ struct PostureEngine {
     /// Head drop in degrees relative to calibration, after lid compensation.
     private(set) var drop: Double = 0
     private(set) var sizeChange: Double = 0
+    private var holdingSlouch = false
+    private var holdingClose = false
 
     mutating func calibrate(lidAngle: Double?) -> Bool {
         guard let elevation = smoothedElevation, let size = smoothedSize else { return false }
         baseline = Baseline(lidAngle: lidAngle ?? 0, elevation: elevation, size: size)
+        holdingSlouch = false
+        holdingClose = false
         return true
     }
 
@@ -72,9 +80,16 @@ struct PostureEngine {
             lastFaceSeen = now
         }
 
-        if let lastFaceSeen, now.timeIntervalSince(lastFaceSeen) > 10 { return .away }
-        if lastFaceSeen == nil { return .away }
+        if let lastFaceSeen, now.timeIntervalSince(lastFaceSeen) > 10 {
+            releaseVerdict()
+            return .away
+        }
+        if lastFaceSeen == nil {
+            releaseVerdict()
+            return .away
+        }
         guard let baseline, let elevation = smoothedElevation, let size = smoothedSize else {
+            releaseVerdict()
             return .needsCalibration
         }
 
@@ -86,8 +101,24 @@ struct PostureEngine {
         drop = baseline.elevation - corrected
         sizeChange = size / baseline.size - 1
 
-        if sizeChange > closeThreshold { return .tooClose }
-        if drop > dropThreshold { return .slouching }
+        if sizeChange > closeThreshold {
+            holdingClose = true
+        } else if sizeChange < closeThreshold - closeHysteresis {
+            holdingClose = false
+        }
+        if drop > dropThreshold {
+            holdingSlouch = true
+        } else if drop < dropThreshold - slouchHysteresis {
+            holdingSlouch = false
+        }
+
+        if holdingClose { return .tooClose }
+        if holdingSlouch { return .slouching }
         return .good
+    }
+
+    private mutating func releaseVerdict() {
+        holdingSlouch = false
+        holdingClose = false
     }
 }

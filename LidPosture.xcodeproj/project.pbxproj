@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070C56EB290E69298C952003 /* PostureEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2FB601C943FC0957ECDE5 /* PostureEngineTests.swift */; };
 		29668C897D363E2C49741683 /* LidAngleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1B8B956091E3524EDD875 /* LidAngleSensor.swift */; };
 		76071C358518B8139FCE39BA /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFE74D4EA55522CC14173A /* FaceTracker.swift */; };
 		AD86632F3E9C6F2145628DA4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDFDB4E3A95BC7340FBB3B /* AppState.swift */; };
@@ -14,20 +15,41 @@
 		EF7441045BA0968230D4AD72 /* PostureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AE011EA0CE45CFADAB3728 /* PostureEngine.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C16C6203B8E518F4D26AA643 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 867181B16F4BA7EFAE5A49B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AAAA805BCE8F3D5DAE36829;
+			remoteInfo = LidPosture;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		25C9173A94B818B9EC16471A /* LidPostureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LidPostureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AE011EA0CE45CFADAB3728 /* PostureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureEngine.swift; sourceTree = "<group>"; };
 		5180ECED92EE1A97B163B3D8 /* LidPostureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidPostureApp.swift; sourceTree = "<group>"; };
 		67CDFDB4E3A95BC7340FBB3B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9BE1B8B956091E3524EDD875 /* LidAngleSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidAngleSensor.swift; sourceTree = "<group>"; };
+		DEC2FB601C943FC0957ECDE5 /* PostureEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureEngineTests.swift; sourceTree = "<group>"; };
 		E0AFE74D4EA55522CC14173A /* FaceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
 		F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LidPosture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		16371F9F51BC2D29F85BF4FF /* LidPostureTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEC2FB601C943FC0957ECDE5 /* PostureEngineTests.swift */,
+			);
+			path = LidPostureTests;
+			sourceTree = "<group>";
+		};
 		262E22277BC27D8E10603B9C /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */,
+				25C9173A94B818B9EC16471A /* LidPostureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				59228316FA7FE19A876D1983 /* LidPosture */,
+				16371F9F51BC2D29F85BF4FF /* LidPostureTests */,
 				262E22277BC27D8E10603B9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +94,24 @@
 			productName = LidPosture;
 			productReference = F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C793C00C066EE528341B0C92 /* LidPostureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCF9460175797B8FF6712408 /* Build configuration list for PBXNativeTarget "LidPostureTests" */;
+			buildPhases = (
+				326244D00C1016BDE14F1D89 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F86A0FE6BEFF4CFA04602CF2 /* PBXTargetDependency */,
+			);
+			name = LidPostureTests;
+			packageProductDependencies = (
+			);
+			productName = LidPostureTests;
+			productReference = 25C9173A94B818B9EC16471A /* LidPostureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -98,11 +139,20 @@
 			projectRoot = "";
 			targets = (
 				0AAAA805BCE8F3D5DAE36829 /* LidPosture */,
+				C793C00C066EE528341B0C92 /* LidPostureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		326244D00C1016BDE14F1D89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070C56EB290E69298C952003 /* PostureEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5096CB23497CA1683420BF47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +166,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F86A0FE6BEFF4CFA04602CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AAAA805BCE8F3D5DAE36829 /* LidPosture */;
+			targetProxy = C16C6203B8E518F4D26AA643 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		354B77062D6804E039AF7904 /* Release */ = {
@@ -281,6 +339,42 @@
 			};
 			name = Release;
 		};
+		E1F993C01C8925E42E3EB505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmyelya.lidPostureTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LidPosture.app/Contents/MacOS/LidPosture";
+			};
+			name = Release;
+		};
+		E762B7A4704DA86186909E10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmyelya.lidPostureTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LidPosture.app/Contents/MacOS/LidPosture";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -298,6 +392,15 @@
 			buildConfigurations = (
 				7ACE58069F9524F8048B2D60 /* Debug */,
 				354B77062D6804E039AF7904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DCF9460175797B8FF6712408 /* Build configuration list for PBXNativeTarget "LidPostureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E762B7A4704DA86186909E10 /* Debug */,
+				E1F993C01C8925E42E3EB505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
