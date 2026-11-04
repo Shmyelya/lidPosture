@@ -40,6 +40,12 @@ xcodegen generate
 | `AppState.swift` | Wiring, alert delay/cooldown, notifications |
 | `LidPostureApp.swift` | `MenuBarExtra` UI |
 
+## Tests
+
+```bash
+xcodebuild test -scheme LidPosture -destination 'platform=macOS'
+```
+
 ## Privacy
 
 Camera frames are processed on-device for face bounds. Video is not recorded or uploaded.

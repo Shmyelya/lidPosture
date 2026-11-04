@@ -14,6 +14,10 @@ schemes:
     build:
       targets:
         LidPosture: all
+        LidPostureTests: [test]
+    test:
+      targets:
+        - LidPostureTests
     run:
       config: Debug
     profile:
@@ -48,3 +52,15 @@ targets:
         LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
     entitlements:
       path: LidPosture/LidPosture.entitlements
+  LidPostureTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - LidPostureTests
+    dependencies:
+      - target: LidPosture
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.shmyelya.lidPostureTests
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
