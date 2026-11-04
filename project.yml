@@ -1,0 +1,50 @@
+name: LidPosture
+options:
+  bundleIdPrefix: com.shmyelya
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+schemes:
+  LidPosture:
+    build:
+      targets:
+        LidPosture: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+targets:
+  LidPosture:
+    type: application
+    platform: macOS
+    sources:
+      - path: LidPosture
+        excludes:
+          - "*.entitlements"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shmyelya.lidPosture
+        PRODUCT_NAME: LidPosture
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: LidPosture
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSCameraUsageDescription: Camera access is used to track head position. Video is not recorded or uploaded.
+        INFOPLIST_KEY_LSUIElement: YES
+        CODE_SIGN_ENTITLEMENTS: LidPosture/LidPosture.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        ENABLE_APP_SANDBOX: NO
+        COMBINE_HIDPI_IMAGES: YES
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+    entitlements:
+      path: LidPosture/LidPosture.entitlements

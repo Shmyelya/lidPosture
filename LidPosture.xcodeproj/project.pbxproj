@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29668C897D363E2C49741683 /* LidAngleSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1B8B956091E3524EDD875 /* LidAngleSensor.swift */; };
+		76071C358518B8139FCE39BA /* FaceTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFE74D4EA55522CC14173A /* FaceTracker.swift */; };
+		AD86632F3E9C6F2145628DA4 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CDFDB4E3A95BC7340FBB3B /* AppState.swift */; };
+		EA28C0CAC84B571132049367 /* LidPostureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180ECED92EE1A97B163B3D8 /* LidPostureApp.swift */; };
+		EF7441045BA0968230D4AD72 /* PostureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AE011EA0CE45CFADAB3728 /* PostureEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33AE011EA0CE45CFADAB3728 /* PostureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureEngine.swift; sourceTree = "<group>"; };
+		5180ECED92EE1A97B163B3D8 /* LidPostureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidPostureApp.swift; sourceTree = "<group>"; };
+		67CDFDB4E3A95BC7340FBB3B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9BE1B8B956091E3524EDD875 /* LidAngleSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidAngleSensor.swift; sourceTree = "<group>"; };
+		E0AFE74D4EA55522CC14173A /* FaceTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTracker.swift; sourceTree = "<group>"; };
+		F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LidPosture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		262E22277BC27D8E10603B9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59228316FA7FE19A876D1983 /* LidPosture */ = {
+			isa = PBXGroup;
+			children = (
+				67CDFDB4E3A95BC7340FBB3B /* AppState.swift */,
+				E0AFE74D4EA55522CC14173A /* FaceTracker.swift */,
+				9BE1B8B956091E3524EDD875 /* LidAngleSensor.swift */,
+				5180ECED92EE1A97B163B3D8 /* LidPostureApp.swift */,
+				33AE011EA0CE45CFADAB3728 /* PostureEngine.swift */,
+			);
+			path = LidPosture;
+			sourceTree = "<group>";
+		};
+		F8B4CD752A8ED36B71942181 = {
+			isa = PBXGroup;
+			children = (
+				59228316FA7FE19A876D1983 /* LidPosture */,
+				262E22277BC27D8E10603B9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AAAA805BCE8F3D5DAE36829 /* LidPosture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8641C503B24DE7CC1FAF9D03 /* Build configuration list for PBXNativeTarget "LidPosture" */;
+			buildPhases = (
+				5096CB23497CA1683420BF47 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LidPosture;
+			packageProductDependencies = (
+			);
+			productName = LidPosture;
+			productReference = F3BDA8A8FF9B219995FCE5FD /* LidPosture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		867181B16F4BA7EFAE5A49B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = B000EA9682E3822099DFBE46 /* Build configuration list for PBXProject "LidPosture" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F8B4CD752A8ED36B71942181;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 262E22277BC27D8E10603B9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AAAA805BCE8F3D5DAE36829 /* LidPosture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5096CB23497CA1683420BF47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD86632F3E9C6F2145628DA4 /* AppState.swift in Sources */,
+				76071C358518B8139FCE39BA /* FaceTracker.swift in Sources */,
+				29668C897D363E2C49741683 /* LidAngleSensor.swift in Sources */,
+				EA28C0CAC84B571132049367 /* LidPostureApp.swift in Sources */,
+				EF7441045BA0968230D4AD72 /* PostureEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		354B77062D6804E039AF7904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4C083684C19F2BCD0E4AB200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LidPosture/LidPosture.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LidPosture;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is used to track head position. Video is not recorded or uploaded.";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmyelya.lidPosture;
+				PRODUCT_NAME = LidPosture;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7ACE58069F9524F8048B2D60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BA460001D524CDFF513E62B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LidPosture/LidPosture.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LidPosture;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is used to track head position. Video is not recorded or uploaded.";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmyelya.lidPosture;
+				PRODUCT_NAME = LidPosture;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8641C503B24DE7CC1FAF9D03 /* Build configuration list for PBXNativeTarget "LidPosture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C083684C19F2BCD0E4AB200 /* Debug */,
+				BA460001D524CDFF513E62B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B000EA9682E3822099DFBE46 /* Build configuration list for PBXProject "LidPosture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ACE58069F9524F8048B2D60 /* Debug */,
+				354B77062D6804E039AF7904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 867181B16F4BA7EFAE5A49B4 /* Project object */;
+}
